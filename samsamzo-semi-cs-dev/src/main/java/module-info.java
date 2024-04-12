@@ -9,4 +9,6 @@ module hong.cs {
 	requires taglibs.standard.jstlel;
 	requires taglibs.standard.spec;
 	requires cos;
+	requires java.sql;
+	requires java.naming;
 }
