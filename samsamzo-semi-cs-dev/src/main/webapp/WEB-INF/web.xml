@@ -16,6 +16,7 @@
 
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>hong.cs.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
