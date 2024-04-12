@@ -14,6 +14,14 @@
 		<location>/error/exception_405.jsp</location>
 	</error-page>
 
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
