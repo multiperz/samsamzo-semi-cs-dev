@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CS 관리</title>
 </head>
 <body>
-ooo
+<script type="text/javascript">
+location.href="./DeptSelect.do"
+</script>
 </body>
 </html>
