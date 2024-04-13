@@ -8,7 +8,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-		location.href = "https://www.naver.com/";
+		location.href = "./CSSelect.cs";
 	</script>
 </body>
 </html>
