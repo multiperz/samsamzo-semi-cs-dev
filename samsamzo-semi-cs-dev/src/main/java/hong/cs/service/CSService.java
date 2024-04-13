@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import hong.cs.dto.CSDTO;
 
 public interface CSService {
-	public ArrayList<CSDTO> csSelectAll();
+	public ArrayList<CSDTO> csSelect();
 
-	public CSDTO csSelect(int cs_number);
+	public CSDTO csSelectDetail(int cs_number);
 
 	public CSDTO csInsert(CSDTO csDTO);
 

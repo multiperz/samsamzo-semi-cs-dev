@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* Main header styles */
+#main-header {
+	background-color: #343a40; /* Dark background color */
+	padding: 20px 0; /* Padding top and bottom */
+}
+
+#main-header h1 {
+	margin-left: 30px; /* Remove default margin 수정함 */
+	color: white; /* Text color */
+}
+
+/* Department section styles */
+#department {
+	padding: 20px 0; /* Padding top and bottom */
+}
+
+.card {
+	margin-bottom: 20px; /* Margin bottom for card */
+}
+
+.card-header {
+	background-color: #f8f9fa; /* Light background color for card header */
+	padding: 10px 15px; /* Padding for card header */
+}
+
+.card-body {
+	padding: 15px; /* Padding for card body */
+}
+
+/* Table styles */
+.table {
+	width: 100%; /* Full width */
+}
+
+.table th, .table td {
+	padding: 8px; /* Padding for table cells */
+}
+
+.table thead th {
+	background-color: #e9ecef;
+	/* Light background color for table header */
+}
+
+/* Button styles */
+.btn {
+	display: inline-block; /* Display as inline-block */
+	box-sizing: border-box; /* 추가함 */
+	padding: 8px 16px; /* Padding for buttons */
+	border: none; /* Remove border */
+	border-radius: 4px; /* Rounded corners */
+	text-decoration: none; /* Remove default text decoration */
+	cursor: pointer; /* Cursor style */
+	text-align: center; /* 추가함 */
+}
+
+.btn-dark {
+	background-color: #343a40; /* Dark background color for dark buttons */
+	color: white; /* Text color for dark buttons */
+}
+
+.btn-success {
+	background-color: #28a745;
+	/* Green background color for success buttons */
+	color: white; /* Text color for success buttons */
+}
+
+.btn-outline-info {
+	background-color: transparent;
+	/* Transparent background color for outline buttons */
+	border: 1px solid #17a2b8; /* Border color for outline buttons */
+	color: #17a2b8; /* Text color for outline buttons */
+}
+
+.btn-block {
+	width: 100%; /* Full width buttons */
+}
+
+td {
+	text-align: center; /* Full width buttons */
+	border: 1px solid #ccc; /* Border style 추가함 */
+}
