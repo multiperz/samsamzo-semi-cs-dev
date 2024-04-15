@@ -14,6 +14,7 @@ import org.apache.commons.logging.LogFactory;
 
 import hong.cs.control.CSController;
 import hong.cs.controller.CSSelectController;
+import hong.cs.controller.CSSelectDetailController;
 import hong.cs.handler.CSHandlerAdapter;
 
 //@WebServlet("/CSDispatcherServlet") → web.xml에서 서블릿 설정했으므로 어노테이션 설정X
@@ -45,14 +46,20 @@ public class CSDispatcherServlet extends HttpServlet implements Servlet {
 			csHandlerAdapter = csController.execute(request, response);
 			log.info("고객문의 조회 확인 - " + csHandlerAdapter);
 		}
+
+		else if (pathURL.equals("/CSSelectDetail.cs")) {
+			csController = new CSSelectDetailController();
+			csHandlerAdapter = csController.execute(request, response);
+			log.info("상세문의 조회 확인 - " + csHandlerAdapter);
+		}
+
 		
 		
-		
-		if (csHandlerAdapter!=null) {
+		if (csHandlerAdapter != null) {
 			if (csHandlerAdapter.isRedirect()) {
 				response.sendRedirect(csHandlerAdapter.getPath());
 			} else {
-				RequestDispatcher dispatcher=request.getRequestDispatcher(csHandlerAdapter.getPath());
+				RequestDispatcher dispatcher = request.getRequestDispatcher(csHandlerAdapter.getPath());
 				dispatcher.forward(request, response);
 			}
 		}

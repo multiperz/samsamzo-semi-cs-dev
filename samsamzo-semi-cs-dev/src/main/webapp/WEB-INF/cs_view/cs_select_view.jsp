@@ -57,7 +57,7 @@
 								</tbody>
 							</table>
 							<div>
-								<a href="./CSInsertView.do" class="btn btn-success btn-block">
+								<a href="./CSInsertView.cs" class="btn btn-success btn-block">
 									문의 입력 </a>
 							</div>
 						</div>
