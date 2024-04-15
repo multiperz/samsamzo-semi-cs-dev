@@ -53,8 +53,14 @@ public class CSDispatcherServlet extends HttpServlet implements Servlet {
 			log.info("상세문의 조회 확인 - " + csHandlerAdapter);
 		}
 
+		else if (pathURL.equals("/CSInsertView.cs")) {
+			csHandlerAdapter = new CSHandlerAdapter();
+			csHandlerAdapter.setPath("/WEB-INF/cs_view/cs_insert_view.jsp");
+			log.info("문의 등록 화면 뷰 확인 - " + csHandlerAdapter);
+		}
 		
 		
+
 		if (csHandlerAdapter != null) {
 			if (csHandlerAdapter.isRedirect()) {
 				response.sendRedirect(csHandlerAdapter.getPath());

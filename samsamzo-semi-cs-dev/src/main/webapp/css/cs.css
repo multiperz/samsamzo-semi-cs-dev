@@ -81,3 +81,29 @@ td {
 	text-align: center; /* Full width buttons */
 	border: 1px solid #ccc; /* Border style 추가함 */
 }
+
+/* Additional styles (Select_Detail_part) */
+body {
+	background-color: #f8f9fa;
+}
+
+.card {
+	border: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.card-header {
+	background-color: #007bff;
+	color: white;
+	border-radius: 10px 10px 0 0;
+}
+
+.card-body, .card-footer {
+	padding: 20px;
+}
+
+.btn {
+	border-radius: 20px;
+}

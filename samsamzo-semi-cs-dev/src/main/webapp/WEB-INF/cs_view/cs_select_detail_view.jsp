@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,35 +31,41 @@
 							<h2>문의 상세 보기</h2>
 						</div>
 						<div class="card-body">
-							<table class="table table-hover">
-								<thead class="thead-light">
-									<tr class="text-center">
-										<th>문의 번호</th>
-										<th>문의 제목</th>
-										<th>문의 일자</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="text-center">
-										<td>${csDTO.cs_number}</td>
-										<td>${csDTO.cs_title}</td>
-										<td>${csDTO.cs_date}</td>
-									</tr>
-								</tbody>
-							</table>
-							<div>
-								<a href="./CSSelect.cs" class="btn btn-success btn-block">
-									문의 목록 </a>
+							<div class="row">
+								<div class="col-md-4">
+									<p>
+										<strong>문의 제목:</strong> ${csDTO.cs_title}
+									</p>
+								</div>
+								<div class="col-md-4">
+									<p>
+										<strong>문의 일자:</strong> ${csDTO.cs_date}
+									</p>
+								</div>
 							</div>
-							<div>
-								<a href="./CSUpdateView.cs?cs_number=${csDTO.cs_number}"
-									class="btn btn-success btn-block"> 문의 수정 </a>
+							<hr>
+							<div class="card mt-4">
+								<div class="card-header">
+									<h3>문의 내용</h3>
+								</div>
+								<div class="card-body">
+									<c:choose>
+										<c:when test="${fn:length(csDTO.cs_content) > 50}">
+                                            ${fn:substring(csDTO.cs_content, 0, 50)}...
+                                        </c:when>
+										<c:otherwise>
+                                            ${csDTO.cs_content}
+                                        </c:otherwise>
+									</c:choose>
+								</div>
 							</div>
-							<div>
-								<a href="./CSDeleteView.cs?cs_number=${csDTO.cs_number}"
-									class="btn btn-success btn-block"> 문의 삭제 </a>
-							</div>
+						</div>
+						<div class="card-footer">
+							<a href="./CSSelect.cs" class="btn btn-success">문의 목록</a> <a
+								href="./CSUpdateView.cs?cs_number=${csDTO.cs_number}"
+								class="btn btn-success">문의 수정</a> <a
+								href="./CSDeleteView.cs?cs_number=${csDTO.cs_number}"
+								class="btn btn-success">문의 삭제</a>
 						</div>
 					</div>
 				</div>
