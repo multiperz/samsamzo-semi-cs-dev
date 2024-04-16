@@ -38,7 +38,7 @@
 										<div class="col-sm-9">
 
 											<input type="text" name="cs_number" id="cs_number"
-												class="form-control">
+												class="form-control" >
 										</div>
 									</div>
 									<div class="form-group row">

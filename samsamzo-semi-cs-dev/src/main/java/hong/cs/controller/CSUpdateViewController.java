@@ -12,33 +12,26 @@ import hong.cs.dto.CSDTO;
 import hong.cs.handler.CSHandlerAdapter;
 
 public class CSUpdateViewController implements CSController {
-	private static Log log=LogFactory.getLog(CSUpdateViewController.class);
+	private static Log log = LogFactory.getLog(CSUpdateViewController.class);
 
 	@Override
 	public CSHandlerAdapter execute(HttpServletRequest request, HttpServletResponse response) {
-		int cs_number=Integer.parseInt(request.getParameter("cs_number"));
+		int cs_number = Integer.parseInt(request.getParameter("cs_number"));
 		log.info(cs_number);
-		String cs_title=request.getParameter("cs_title");
-		log.info(cs_title);
-		String cs_date=request.getParameter("cs_date");
-		log.info(cs_date);
-		String cs_content=request.getParameter("cs_content");
-		log.info(cs_content);
-		
+		System.out.println(cs_number);
+
 		CSDAO csDAO = new CSDAO();
 		CSDTO csDTO = new CSDTO();
 		
-		csDTO.setCs_number(cs_number);
-		csDTO.setCs_title(cs_title);
-		csDTO.setCs_date(cs_date);
-		csDTO.setCs_content(cs_content);
 		
-		csDTO=csDAO.csUpdate(csDTO);
-		log.info(csDTO);
-		
+		csDTO = csDAO.csSelectDetail(cs_number);
+	
+
 		request.setAttribute("csDTO", csDTO);
 		CSHandlerAdapter csHandlerAdapter = new CSHandlerAdapter();
+		log.info("특정 문의 조회");
 		csHandlerAdapter.setPath("/WEB-INF/cs_view/cs_update_view.jsp");
 		return csHandlerAdapter;
 	}
+
 }

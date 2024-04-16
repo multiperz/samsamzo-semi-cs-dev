@@ -17,6 +17,7 @@ import hong.cs.controller.CSInsertController;
 import hong.cs.controller.CSSelectController;
 import hong.cs.controller.CSSelectDetailController;
 import hong.cs.controller.CSUpdateViewController;
+import hong.cs.controller.CSUpdateController;
 import hong.cs.handler.CSHandlerAdapter;
 
 //@WebServlet("/CSDispatcherServlet") → web.xml에서 서블릿 설정했으므로 어노테이션 설정X
@@ -71,6 +72,17 @@ public class CSDispatcherServlet extends HttpServlet implements Servlet {
 			csController=new CSUpdateViewController();
 			csHandlerAdapter=csController.execute(request, response);
 			log.info("문의 수정 화면 뷰 확인 - "+csHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/CSUpdate.cs")) {
+			csController=new CSUpdateController();
+			csHandlerAdapter=csController.execute(request, response);
+			log.info("부서 수정 확인 - "+csHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/CSDeleteView.cs")) {
+			csHandlerAdapter=new CSHandlerAdapter();
+			
 		}
 		
 
