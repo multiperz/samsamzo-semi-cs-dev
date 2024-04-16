@@ -28,9 +28,17 @@
 							<h2>문의 등록</h2>
 						</div>
 						<div class="card-body">
-							<form action="./CSInsertView.cs" method="post"
+							<form action="./CSInsert.cs" method="post"
 								id="customer_inquiry_form">
 								<fieldset>
+									<div class="form-group row">
+										<label for="cs_number" class="col-sm-3 col-form-label">문의
+											번호</label>
+										<div class="col-sm-9">
+											<input type="text" name="cs_number" id="cs_number"
+												class="form-control">
+										</div>
+									</div>
 									<div class="form-group row">
 										<label for="cs_title" class="col-sm-3 col-form-label">문의
 											제목</label>

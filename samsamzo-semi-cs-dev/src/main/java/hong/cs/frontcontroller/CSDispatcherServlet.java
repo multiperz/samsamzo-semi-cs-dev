@@ -13,6 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import hong.cs.control.CSController;
+import hong.cs.controller.CSInsertController;
 import hong.cs.controller.CSSelectController;
 import hong.cs.controller.CSSelectDetailController;
 import hong.cs.handler.CSHandlerAdapter;
@@ -57,6 +58,12 @@ public class CSDispatcherServlet extends HttpServlet implements Servlet {
 			csHandlerAdapter = new CSHandlerAdapter();
 			csHandlerAdapter.setPath("/WEB-INF/cs_view/cs_insert_view.jsp");
 			log.info("문의 등록 화면 뷰 확인 - " + csHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/CSInsert.cs")) {
+			csController=new CSInsertController();
+			csHandlerAdapter=csController.execute(request, response);
+			log.info("문의 등록 확인 - "+csHandlerAdapter);
 		}
 		
 		
