@@ -104,7 +104,7 @@ public class CSDAO implements CSService {
 			Context context = new InitialContext();
 			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
 			connection = dataSource.getConnection();
-			String sql = "insert into ci (cs_number, cs_title, cs_date, cs_content)";
+			String sql = "insert into ci (cs_title, cs_date, cs_content)";
 			sql += " values(?,?,?)";
 			log.info("SQL 확인 - " + sql);
 			preparedStatement = connection.prepareStatement(sql);
