@@ -13,6 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import hong.cs.control.CSController;
+import hong.cs.controller.CSDeleteContorller;
 import hong.cs.controller.CSInsertController;
 import hong.cs.controller.CSSelectController;
 import hong.cs.controller.CSSelectDetailController;
@@ -77,12 +78,19 @@ public class CSDispatcherServlet extends HttpServlet implements Servlet {
 		else if (pathURL.equals("/CSUpdate.cs")) {
 			csController=new CSUpdateController();
 			csHandlerAdapter=csController.execute(request, response);
-			log.info("부서 수정 확인 - "+csHandlerAdapter);
+			log.info("문의 수정 확인 - "+csHandlerAdapter);
 		}
 		
 		else if (pathURL.equals("/CSDeleteView.cs")) {
 			csHandlerAdapter=new CSHandlerAdapter();
-			
+			csHandlerAdapter.setPath("/WEB-INF/cs_view/cs_delete_view.jsp");
+			log.info("문의 삭제 화면 뷰 확인 - "+csHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/CSDelete.cs")) {
+			csController=new CSDeleteContorller();
+			csHandlerAdapter=csController.execute(request, response);
+			log.info("문의 삭제 확인 - "+csHandlerAdapter);
 		}
 		
 

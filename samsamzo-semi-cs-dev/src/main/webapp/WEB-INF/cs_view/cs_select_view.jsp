@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="./css/cs.css">
 </head>
 <body>
-	<header id="main-header" class="py-2 btn-dark text-white">
+	<header id="main-header" class="py-2 text-white">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">

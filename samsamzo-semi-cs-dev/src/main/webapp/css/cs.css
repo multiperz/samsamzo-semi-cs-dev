@@ -1,109 +1,89 @@
 @charset "UTF-8";
 
-/* Main header styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f8f9fa;
+}
+
+/* Header styling */
 #main-header {
-	background-color: #343a40; /* Dark background color */
-	padding: 20px 0; /* Padding top and bottom */
+	background-color: #343a40;
 }
 
 #main-header h1 {
-	margin-left: 30px; /* Remove default margin 수정함 */
-	color: white; /* Text color */
+	margin: 0;
 }
 
-/* Department section styles */
-#department {
-	padding: 20px 0; /* Padding top and bottom */
-}
-
+/* Card component styling */
 .card {
-	margin-bottom: 20px; /* Margin bottom for card */
+	margin-bottom: 20px;
 }
 
-.card-header {
-	background-color: #f8f9fa; /* Light background color for card header */
-	padding: 10px 15px; /* Padding for card header */
+.card-header, .card-footer {
+	background-color: #007bff;
+	color: #fff;
 }
 
 .card-body {
-	padding: 15px; /* Padding for card body */
+	background-color: #fff;
 }
 
-/* Table styles */
-.table {
-	width: 100%; /* Full width */
+/* Form styling */
+.form-group {
+	margin-bottom: 20px;
 }
 
-.table th, .table td {
-	padding: 8px; /* Padding for table cells */
-}
-
-.table thead th {
-	background-color: #e9ecef;
-	/* Light background color for table header */
-}
-
-/* Button styles */
+/* Button styling */
 .btn {
-	display: inline-block; /* Display as inline-block */
-	box-sizing: border-box; /* 추가함 */
-	padding: 8px 16px; /* Padding for buttons */
-	border: none; /* Remove border */
-	border-radius: 4px; /* Rounded corners */
-	text-decoration: none; /* Remove default text decoration */
-	cursor: pointer; /* Cursor style */
-	text-align: center; /* 추가함 */
+	cursor: pointer;
 }
 
-.btn-dark {
-	background-color: #343a40; /* Dark background color for dark buttons */
-	color: white; /* Text color for dark buttons */
+.btn-primary {
+	background-color: #007bff;
+	border-color: #007bff;
+}
+
+.btn-primary:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
 }
 
 .btn-success {
 	background-color: #28a745;
-	/* Green background color for success buttons */
-	color: white; /* Text color for success buttons */
+	border-color: #28a745;
+	color: #fff; /* Add text color for consistency */
 }
 
-.btn-outline-info {
-	background-color: transparent;
-	/* Transparent background color for outline buttons */
-	border: 1px solid #17a2b8; /* Border color for outline buttons */
-	color: #17a2b8; /* Text color for outline buttons */
+.btn-success:hover {
+	background-color: #218838;
+	border-color: #218838;
 }
 
-.btn-block {
-	width: 100%; /* Full width buttons */
+.btn-secondary {
+	background-color: #6c757d;
+	border-color: #6c757d;
 }
 
-td {
-	text-align: center; /* Full width buttons */
-	border: 1px solid #ccc; /* Border style 추가함 */
+.btn-secondary:hover {
+	background-color: #545b62;
+	border-color: #4e555b;
 }
 
-/* Additional styles (Select_Detail_part) */
-body {
-	background-color: #f8f9fa;
-}
-
-.card {
-	border: none;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	margin-bottom: 20px;
-}
-
-.card-header {
-	background-color: #007bff;
-	color: white;
-	border-radius: 10px 10px 0 0;
-}
-
-.card-body, .card-footer {
+/* Additional styling for specific elements */
+.form-container {
 	padding: 20px;
+	border: 1px solid #dee2e6;
+	border-radius: 4px;
 }
 
-.btn {
-	border-radius: 20px;
+.button-group {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px; /* Adjust margin as needed for spacing */
+	border-top: 1px solid #dee2e6; /* Add border styling */
+    padding-top: 20px; /* Add padding for spacing between border and buttons */
+}
+
+.button-group .btn {
+    margin-left: 10px; /* Adjust margin as needed between buttons */
 }

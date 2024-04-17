@@ -1,6 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<h1>고객 문의 수정</h1>
+					<h1>samsamzo 고객 문의 수정</h1>
 				</div>
 			</div>
 		</div>
@@ -36,9 +36,8 @@
 										<label for="cs_number" class="ml-sm-3 col-form-label">
 											문의 번호 </label>
 										<div class="col-sm-9">
-
 											<input type="text" name="cs_number" id="cs_number"
-												class="form-control" >
+												class="form-control">
 										</div>
 									</div>
 									<div class="form-group row">
@@ -67,7 +66,7 @@
 									</div>
 									<div class="form-group row">
 										<div class="col-sm-9 offset-sm-3">
-											<button type="submit" class="btn btn-secondary">문의
+											<button type="submit" class="btn btn-success">문의
 												수정</button>
 											<button type="reset" class="btn btn-secondary">취소</button>
 										</div>

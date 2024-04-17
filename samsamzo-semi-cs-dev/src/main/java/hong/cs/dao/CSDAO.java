@@ -135,23 +135,23 @@ public class CSDAO implements CSService {
 
 	@Override
 	public CSDTO csUpdate(CSDTO csDTO) {
-		Connection connection=null;
-		PreparedStatement preparedStatement=null;
-		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
 		try {
-			Context context=new InitialContext();
-			DataSource dataSource=(DataSource)context.lookup("java:comp/env/jdbc");
-			connection=dataSource.getConnection();
-			String sql="update ci set cs_title=?, cs_date=?, cs_content=?";
-			sql+=" where cs_number=?";
-			log.info("SQL 확인 - "+sql);
-			preparedStatement=connection.prepareStatement(sql);
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			String sql = "update ci set cs_title=?, cs_date=?, cs_content=?";
+			sql += " where cs_number=?";
+			log.info("SQL 확인 - " + sql);
+			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, csDTO.getCs_title());
 			preparedStatement.setString(2, csDTO.getCs_date());
 			preparedStatement.setString(3, csDTO.getCs_content());
 			preparedStatement.setInt(4, csDTO.getCs_number());
-			int count=preparedStatement.executeUpdate();
-			if (count>0) {
+			int count = preparedStatement.executeUpdate();
+			if (count > 0) {
 				connection.commit();
 				log.info("커밋되었습니다.");
 			} else {
@@ -159,7 +159,7 @@ public class CSDAO implements CSService {
 				log.info("롤백되었습니다.");
 			}
 		} catch (Exception e) {
-			log.info("문의 수정 실패 - "+e);
+			log.info("문의 수정 실패 - " + e);
 		} finally {
 			try {
 				preparedStatement.close();
@@ -173,6 +173,37 @@ public class CSDAO implements CSService {
 
 	@Override
 	public CSDTO csDelete(int cs_number) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			String sql = "delete from ci";
+			sql += " where cs_number=?";
+			log.info("SQL 확인 - " + sql);
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, cs_number);
+
+			int count = preparedStatement.executeUpdate();
+			if (count > 0) {
+				connection.commit();
+				log.info("커밋되었습니다.");
+			} else {
+				connection.rollback();
+				log.info("롤백되었습니다.");
+			}
+		} catch (Exception e) {
+			log.info("부서 삭제 실패 - " + e);
+		} finally {
+			try {
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 }
