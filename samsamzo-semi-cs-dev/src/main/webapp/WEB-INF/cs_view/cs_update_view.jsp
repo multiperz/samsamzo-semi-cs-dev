@@ -34,7 +34,7 @@
 								<fieldset>
 									<div class="form-group row">
 										<label for="cs_number" class="ml-sm-3 col-form-label">
-											문의 번호 </label>
+											문의 번호 22</label>
 										<div class="col-sm-9">
 											<input type="text" name="cs_number" id="cs_number"
 												class="form-control">

@@ -33,7 +33,7 @@
 							<table class="table table-hover">
 								<thead class="thead-light">
 									<tr class="text-center">
-										<th>문의 번호</th>
+										<th>문의 번호11</th>
 										<th>문의 제목</th>
 										<th>문의 일자</th>
 										<th></th>
